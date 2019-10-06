@@ -3,7 +3,9 @@ Different configuration steps for raspberry pi
 
 ### Zero W
 
-#### ssh via usb
+## USB
+
+#### ssh
 1. Use the HDMI montior and keyboard to login the pi.
 2. Run sudo raspi-config and enable the interfaces (SSH, etc..), update and reboot.
 3. Add the line 'dtoverlay=dwc2' in the file /boot/config.txt
