@@ -29,6 +29,7 @@ create a new one as it ususally does by default.
 #### internet forwarding
 On your pc run the following:
 ```bash
+sudo sysctl -w net.ipv4.ip_forward=1
 echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A POSTROUTING -o XXX -j MASQUERADE
 ```
