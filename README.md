@@ -34,4 +34,3 @@ On your pc run the following:
 sudo sysctl -w net.ipv4.ip_forward=1
 sudo iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
 ```
-replace XXX with the name of your usb interface (run ifconfig, usually something like enp0s20u1)
