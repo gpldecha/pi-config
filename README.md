@@ -21,3 +21,7 @@ Address       Netmask          Gateway
 192.168.2.1   255.255.255.0    192.168.2.1   
 ```
 The last step made it possible to ssh via the usb, steps adapted from [here](https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/ethernet-gadget).
+
+7. Network-manager -> connection -> Ethernet select for the Device: the usb device name, for 
+instance (enp0s20u1). When you reconnect the usb, it will reuse this networking setting and not 
+create a new one as it ususally does by default.
