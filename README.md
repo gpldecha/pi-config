@@ -30,7 +30,6 @@ create a new one as it ususally does by default.
 On your pc run the following:
 ```bash
 sudo sysctl -w net.ipv4.ip_forward=1
-echo 1 > /proc/sys/net/ipv4/ip_forward
-iptables -t nat -A POSTROUTING -o XXX -j MASQUERADE
+sudo iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
 ```
 replace XXX with the name of your usb interface (run ifconfig, usually something like enp0s20u1)
