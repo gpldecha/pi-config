@@ -33,7 +33,28 @@ On your pc run the following:
 ```bash
 sudo sysctl -w net.ipv4.ip_forward=1
 sudo iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
+
 ```
+
+## Wirless video streaming
+
+* download onto the pie [streameye](https://github.com/ccrisan/streameye) 
+
+```bash
+  python3 raspimjpeg.py -w 640 -h 480 -q 5 -awb=off -r 60 | streameye 
+```
+
+To remove the auto white balancing the code has to be edited:
+**for the standard pi camera**
+```bash
+  camera.awb_gains = (1.4, 2.1)
+```
+**for the fish eye camera**
+```bash
+  camera.awb_gains = (1.4, 2.1)
+```
+
+
 ## Notes
 
 * The static ip for the usb ethernet device seems to restrict some of the packages which can be downloaded.
