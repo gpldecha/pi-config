@@ -1,0 +1,13 @@
+[Unit]
+Description=Runs the pi camera on an http server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/pi-config/http_server
+Restart=always
+RestartSec=5s
+KillMode=process
+TimeoutSec=infinity
+
+[Install]
+WantedBy=network.target

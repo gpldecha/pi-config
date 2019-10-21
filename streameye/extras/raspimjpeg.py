@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Copyright (c) Calin Crisan
 # This file is part of streamEye.
@@ -221,8 +221,8 @@ def init_camera():
     logging.debug('initializing camera')
 
     logging.debug('using resolution %dx%d' % (options.width, options.height))
-    camera = picamera.PiCamera(resolution=(options.width, options.height))
-    
+    camera = picamera.PiCamera(resolution=(options.width, options.height), sensor_mode=0)
+
     logging.debug('using framerate = %d' % options.framerate)
     camera.framerate = options.framerate
     
