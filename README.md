@@ -35,7 +35,6 @@ sudo sysctl -w net.ipv4.ip_forward=1
 sudo iptables -A POSTROUTING -t nat -j MASQUERADE -s 192.168.2.0/24
 
 ```
-
 ## Wirless video streaming
 
 * download onto the pie [streameye](https://github.com/ccrisan/streameye) 
@@ -52,6 +51,17 @@ To remove the auto white balancing the code has to be edited:
 **for the fish eye camera**
 ```bash
   camera.awb_gains = (1.4, 2.1)
+```
+
+## Run program on startup
+
+copy the file picam.service to /lib/systemd/system
+
+```bash
+sudo chmod 644 /lib/systemd/system/picam.service
+sudo systemctl daemon-reload
+sudo systemctl enable picam.service
+sudo reboot
 ```
 
 
